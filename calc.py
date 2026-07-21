@@ -25,7 +25,7 @@ while True:
     try: #add a if menu_num not in ][1,2,3,4,5]
         menu_num = int(input('Choose an option: '))
     except ValueError:
-        print("Invalid selection. Enter a number 1 - 5.")
+        print("Invalid selection. Enter a number 1 - 6.")
         continue
 
 
@@ -67,8 +67,9 @@ while True:
         
 
     else:
-        print("Invalid selection. Enter a number 1 - 5.")
+        print("Invalid selection. Enter a number 1 - 6.")
         result = None
+        continue
     
     if result is not None:
         print('Result: ', result)
