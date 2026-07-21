@@ -9,8 +9,9 @@ def multiply(number1, number2):
 
 def divide(number1, number2):
     if number2 == 0:
-        return "Can't divide by zero"
-    return number1 / number2
+        print("Can't divide by zero")
+    else:
+        return number1 / number2
 
 history = []
 
@@ -68,11 +69,8 @@ while True:
 
     else:
         print("Invalid selection. Enter a number 1 - 6.")
-        result = None
         continue
     
-    if result is not None:
-        print('Result: ', result)
-
+    print('Result: ', result)
     history.append(equation)
     print()
