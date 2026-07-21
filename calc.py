@@ -13,8 +13,8 @@ def divide(number1, number2):
         return None
     return number1 / number2
 
-def format_equation(number1, number2, operater, result):
-    return str(number1) + operater + str(number2) + " = " + str(result)
+def format_equation(number1, number2, operator, result):
+    return str(number1) + operator + str(number2) + " = " + str(result)
 
 history = []
 
@@ -54,18 +54,18 @@ while True:
     
     if menu_num == 1:
         result = add(number1, number2)
-        operater = "+"
+        operator = "+"
     elif menu_num == 2:
         result = subtract(number1, number2)
-        operater = "-"
+        operator = "-"
 
     elif menu_num == 3:
         result = multiply(number1, number2)
-        operater = "*"
+        operator = "*"
 
     elif menu_num == 4:
         result = divide(number1, number2)
-        operater = "/"
+        operator = "/"
         if result is None:
             continue  
 
@@ -73,7 +73,7 @@ while True:
         print("Invalid selection. Enter a number 1 - 6.")
         continue
     
-    equation = format_equation(number1, number2, operater, result)
+    equation = format_equation(number1, number2, operator, result)
     print('Result: ', result)
     history.append(equation)
     print()
