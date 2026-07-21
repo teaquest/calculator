@@ -10,8 +10,11 @@ def multiply(number1, number2):
 def divide(number1, number2):
     if number2 == 0:
         print("Can't divide by zero")
-    else:
-        return number1 / number2
+        return None
+    return number1 / number2
+
+def equation(number1, number2, result):
+    return str(number1) + " * " + str(number2) + " = " + str(result)
 
 history = []
 
@@ -51,26 +54,23 @@ while True:
     
     if menu_num == 1:
         result = add(num1, num2)
-        equation = str(num1) + " + " + str(num2) + " = " + str(result)
         
     elif menu_num == 2:
         result = subtract(num1, num2)
-        equation = str(num1) + " - " + str(num2) + " = " + str(result)
     
     elif menu_num == 3:
         result = multiply(num1, num2)
-        equation = str(num1) + " * " + str(num2) + " = " + str(result)
 
     elif menu_num == 4:
         result = divide(num1, num2)
-        equation = str(num1) + " / " + str(num2) + " = " + str(result)
-    
-        
+        if result is None:
+            continue  
 
     else:
         print("Invalid selection. Enter a number 1 - 6.")
         continue
     
+    equationhist = equation(num1, num2, result)
     print('Result: ', result)
-    history.append(equation)
+    history.append(equationhist)
     print()
