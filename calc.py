@@ -13,8 +13,16 @@ def divide(number1, number2):
         return None
     return number1 / number2
 
-def equation(number1, number2, result):
-    return str(number1) + " * " + str(number2) + " = " + str(result)
+def equation(number1, number2, menu_num, result):
+    if menu_num == 1: 
+        operation = " + "
+    elif menu_num == 2:
+        operation = " - "
+    elif menu_num == 3:
+        operation = " * "
+    elif menu_num == 4:
+        operation = " / "
+    return str(number1) + str(operation) + str(number2) + " = " + str(result)
 
 history = []
 
@@ -70,7 +78,7 @@ while True:
         print("Invalid selection. Enter a number 1 - 6.")
         continue
     
-    equationhist = equation(num1, num2, result)
+    equationhist = equation(num1, num2, menu_num, result)
     print('Result: ', result)
     history.append(equationhist)
     print()
