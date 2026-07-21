@@ -14,7 +14,7 @@ def divide(number1, number2):
     return number1 / number2
 
 def format_equation(number1, number2, operator, result):
-    return str(number1) + operator + str(number2) + " = " + str(result)
+    return str(number1) + " " + operator + " " +str(number2) + " = " + str(result)
 
 history = []
 
