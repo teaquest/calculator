@@ -13,16 +13,8 @@ def divide(number1, number2):
         return None
     return number1 / number2
 
-def equation(number1, number2, menu_num, result):
-    if menu_num == 1: 
-        operation = " + "
-    elif menu_num == 2:
-        operation = " - "
-    elif menu_num == 3:
-        operation = " * "
-    elif menu_num == 4:
-        operation = " / "
-    return str(number1) + str(operation) + str(number2) + " = " + str(result)
+def format_equation(number1, number2, operater, result):
+    return str(number1) + operater + str(number2) + " = " + str(result)
 
 history = []
 
@@ -50,27 +42,30 @@ while True:
         continue
 
     try:
-        num1 = float(input('Enter first number: '))
+        number1 = float(input('Enter first number: '))
     except ValueError:
         print("Invalid number. Please enter a numeric value.")
         continue
     try:
-        num2 = float(input('Enter second number: '))
+        number2 = float(input('Enter second number: '))
     except ValueError:
         print("Invalid number. Please enter a numeric value.")
         continue 
     
     if menu_num == 1:
-        result = add(num1, num2)
-        
+        result = add(number1, number2)
+        operater = "+"
     elif menu_num == 2:
-        result = subtract(num1, num2)
-    
+        result = subtract(number1, number2)
+        operater = "-"
+
     elif menu_num == 3:
-        result = multiply(num1, num2)
+        result = multiply(number1, number2)
+        operater = "*"
 
     elif menu_num == 4:
-        result = divide(num1, num2)
+        result = divide(number1, number2)
+        operater = "/"
         if result is None:
             continue  
 
@@ -78,7 +73,7 @@ while True:
         print("Invalid selection. Enter a number 1 - 6.")
         continue
     
-    equationhist = equation(num1, num2, menu_num, result)
+    equation = format_equation(number1, number2, operater, result)
     print('Result: ', result)
-    history.append(equationhist)
+    history.append(equation)
     print()
